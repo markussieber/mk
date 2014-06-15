@@ -1,14 +1,23 @@
 
 /  mk framework by markus sieber
-\d .mk
+\d .m
 
 / util functions
 
 
 / t: timer
-T:([]t:0#.z.Z;f:();r:0#0b) /timer table
+
+
+T:([]t:`s#0#.z.Z;f:())
 tn:.z.ts:{e:T i:t?&/t:T`t;$[0>r:.z.Z-0Wz^e`t;."\\t ",$0|-_r*86400000;[T::(i#T),(i+1)_T;@[e`f;::];tn[]]]}
-t:{T,:`t`f`r!($[-15h=@x;x;.z.Z+x%86400000];y;0b);tn[]} /setTimeout[timeoutInMs;function]
+t:{$[7h=t:abs@@x;x:.z.Z+19h$x;]; $[in[t]17 18 19h;x:"z"$x+.z.D+$[x< t$.z.Z;1;0];];  x:15h$x;   T,:`t`f!(x;y) ;tn[]; }
+
+
+
+
+
+
+
 
 
 /
@@ -21,5 +30,6 @@ s@.:'"20037000900920000700100400205000080000800090000600004090010050080000760040
 
 / a sample http server that outputs fibonacci numbers; call http://localhost:1025/80  to see 80th fibonacci number
 .z.ph:{$*(-7h$x 0){1_x,+/x}/!2};."\\p 1025"
+
 
 

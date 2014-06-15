@@ -1,7 +1,5 @@
-mk
-==
-
-mk framework for kdb+
+Markus framework for kdb+
+=========================
 
 current features:
  * timer abstraction
@@ -9,10 +7,10 @@ current features:
 
 example usage of timer functionality:
 
-.mk.t[2000;{1"hello"}] /says hello on stdout after 2s
+.m.t[2000;{1"hello"}] /says hello on stdout after 2s
 
-.mk.t[.z.Z+1;{1"hello"}] /says hello on stdout tomorrow same date
+.m.t[.z.Z+1;{1"hello"}] /says hello on stdout tomorrow same date
+.m.t[20:33;{1"20:33"}] /callback at 20:33 (auto next day..)
+.m.t[00:00;{1"eod"}] / callback at midnight
 
-.mk.t[.z.Z+2%86400;{1"hello"}] /says hello on stdout after 2s
-
-.mk.T /shows the timer table columns are t(ime of exection), f(unction to call), r(epeat)
+.m.T /shows the timer table columns are t(ime of exection), f(unction to call), r(epeat)
